@@ -1,0 +1,1016 @@
+<div class="main-content">
+  <!-- Header -->
+  <div class="header pt-5 pb-7" style="color:#f6f9fc;">
+    <!--chart-->
+    <div class=" container-fluid pb-7">
+      <div class=" header-body">
+        <div class=" row">
+          <div class=" col-xl-12">
+            <div class=" card">
+              <div class=" card-header" style="text-align:center;">
+                <h5 class=" h3 mb-0">Agensi Bantuan Mengikut Negeri</h5>
+              </div>       
+              <div class=" card-body">
+             <div class="chart" id="chartdiv2"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class=" row">
+          <div class=" col-xl-6">
+            <div class=" card">
+              <div class=" card-header" style="text-align:center;">
+                <h5 class=" h3 mb-0">Jenis Bantuan</h5>
+              </div>       
+              <div class=" card-body">
+              <div class="chart" id="chartdiv"></div>
+                </div>
+              </div>
+          </div>
+          <div class=" col-xl-6">
+            <div class=" card">
+              <div class=" card-header" style="text-align:center;">
+                <h5 class=" h3 mb-0">Status Permohonan</h5>
+              </div>       
+              <div class=" card-body">
+              <div class="chart" id="chartdiv1"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" col-xl-12">
+            <div class=" card">
+              <div class=" card-header" style="text-align:center;">
+                <h5 class=" h3 mb-0">Jumlah (RM) Agihan Sebenar VS Agihan Anggaran</h5>
+              </div>       
+              <div class=" card-body">
+               <div class="chart" id="chartdiv3"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--gambar-->
+    <div class=" container-fluid mt--6">
+      <div class=" card">
+        <div class="row" style="justify-content: space-evenly;">
+          <div class=" col-md-12">
+            <div class=" card">
+              <div class=" card-header" style="text-align:center;">
+                <h5 class=" h3 mb-0">Penjanaan Laporan</h5>
+              </div>       
+              <div class=" card-body" style="text-align:center;">
+                <i class="far fa-file-alt fa-8x" (click)="openModal(template)" style="color:black;"></i>
+              </div>
+            </div>           
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">E-Kasih</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <tabset>
+        <tab heading="Jenis Laporan" id="tab1">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Jenis Laporan</h3></div>
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Negeri </option>
+                      <option value="Johor"> Johor </option>
+                      <option value="Kedah"> Kedah </option>
+                      <option value="Kelantan"> Kelantan </option>
+                      <option value="Melaka"> Melaka </option>
+                      <option value="Sembilan"> Negeri Sembilan </option>
+                      <option value="Pahang"> Pahang </option>
+                      <option value="Perak"> Perak </option>
+                      <option value="Perlis"> Perlis </option>
+                      <option value="Pinang"> Pulau Pinang </option>
+                      <option value="Sabah"> Sabah </option>
+                      <option value="Selangor"> Selangor </option>
+                      <option value="modals"> Terengganu </option>
+                      <option value="Wilayah"> Wilayah Persekutuan </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jenis Laporan
+                      </label>
+                    </div>                   
+                    <div class=" card">
+                      <div class="row" style="justify-content: space-evenly;">
+                        <div class=" col-md-4">
+                          <div class=" card">
+                            <div class=" card-header" style="text-align:center;">
+                              <h5 class=" h3 mb-0">Laporan Terkeluar Program</h5>
+                            </div>       
+                            <div class=" card-body" style="text-align:center;">
+                              <i class="fas fa-sign-out-alt fa-8x" style="color:black;"></i>
+                            </div>
+                          </div>           
+                        </div>
+                        <div class=" col-md-4">
+                          <div class=" card">
+                            <div class=" card-header" style="text-align:center;">
+                              <h5 class=" h3 mb-0">Laporan Statistik KIR</h5>
+                            </div>       
+                            <div class=" card-body" style="text-align:center;">
+                              <i class="fas fa-chart-line fa-8x" style="color:black;"></i>
+                            </div>
+                          </div>           
+                        </div>
+                        <div class=" col-md-4">
+                          <div class=" card">
+                            <div class=" card-header" style="text-align:center;">
+                              <h5 class=" h3 mb-0">Laporan Bantuan</h5>
+                            </div>       
+                            <div class=" card-body" style="text-align:center;">
+                              <i class="fas fa-hand-holding-heart fa-8x" style="color:black;"></i>
+                            </div>
+                          </div>           
+                        </div>   
+                      </div>
+                    </div>
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit">
+                      Seterusnya
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Maklumat Laporan">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri:
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                       Parlimen/ Daerah/ PBT:
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Dun / Daerah/ Bandar
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit" (click)="openModal3(template3)">
+                      Hantar
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Janaan Laporan">
+          <div class=" row" style="text-align:center;">
+            <div class=" col">
+              <div class=" card">
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Suku Tahun
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Pertama </option>
+                      <option value="Johor"> Kedua </option>
+                      <option value="Kedah"> Ketiga </option>
+                      <option value="Kelantan"> Keempat </option>
+                      </select>
+                    </div>  
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Negeri </option>
+                      <option value="Johor"> Johor </option>
+                      <option value="Kedah"> Kedah </option>
+                      <option value="Kelantan"> Kelantan </option>
+                      <option value="Melaka"> Melaka </option>
+                      <option value="Sembilan"> Negeri Sembilan </option>
+                      <option value="Pahang"> Pahang </option>
+                      <option value="Perak"> Perak </option>
+                      <option value="Perlis"> Perlis </option>
+                      <option value="Pinang"> Pulau Pinang </option>
+                      <option value="Sabah"> Sabah </option>
+                      <option value="Selangor"> Selangor </option>
+                      <option value="modals"> Terengganu </option>
+                      <option value="Wilayah"> Wilayah Persekutuan </option>
+                      </select>
+                    </div>                   
+                  </form>
+                </div>
+                <div class=" table-responsive">
+                  <table class=" table align-items-center table-flush">
+                    <thead class=" thead-light">
+                      <tr>
+                        <th rowspan="5" >Negeri</th>
+                        <th colspan="8">2008</th>
+                      </tr>
+                      <tr>
+                        <th colspan="8">Suku Tahun Keempat</th>
+                      </tr>
+                      <tr>
+                        <th colspan="8">Bulan November</th>
+                      </tr>
+                      <tr>
+                        <th colspan="2">Melepasi PGK</th>
+                        <th colspan="2">Miskin</th>
+                        <th colspan="2">Mskkin Tegar</th>
+                        <th colspan="2">Jumlah</th>
+                      </tr>
+                      <tr>
+                        <th>Bil KIR</th>
+                        <th>% KIR</th>
+                        <th>Bil KIR</th>
+                        <th>% KIR</th>
+                        <th>Bil KIR</th>
+                        <th>% KIR</th>
+                        <th>Bil KIR</th>
+                        <th>% KIR</th>
+                      </tr>
+                    </thead>
+        
+                    <tbody class=" list">
+                      <tr>
+                        <th>Perak</th>
+                        <td>2549</td>
+                        <td>3.85%</td>
+                        <td>2549</td>
+                        <td>3.85%</td>
+                        <td>2123</td>
+                        <td>1.22%</td>
+                        <td>1234</td>
+                        <td>3.82%</td>
+                      </tr>
+                      <tr>
+                        <th>Johor</th>
+                        <td>3124</td>
+                        <td>1.85%</td>
+                        <td>4532</td>
+                        <td>1.00%</td>
+                        <td>1211</td>
+                        <td>1.22%</td>
+                        <td>3222</td>
+                        <td>2.22%</td>
+                      </tr>
+                      <tr>
+                        <th>Kedah</th>
+                        <td>2549</td>
+                        <td>3.85%</td>
+                        <td>2549</td>
+                        <td>3.85%</td>
+                        <td>2123</td>
+                        <td>1.22%</td>
+                        <td>1234</td>
+                        <td>3.82%</td>
+                      </tr>
+                      <tr>
+                        <th>Kelantan</th>
+                        <td>2500</td>
+                        <td>2.95%</td>
+                        <td>2122</td>
+                        <td>1.25%</td>
+                        <td>3111</td>
+                        <td>1.55%</td>
+                        <td>1234</td>
+                        <td>3.82%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit">
+                      Tutup
+                    </button>
+                    <button class=" btn btn-info" type="submit">
+                      Eksport
+                    </button>
+                    <button class=" btn btn-info" type="submit">
+                      Print
+                    </button>
+                  </div>
+                </div>
+        
+                <div class=" card-footer py-4">
+                  <nav aria-label="...">
+                    <pagination
+                      [totalItems]="25"
+                      class="justify-content-end mb-0"
+                      previousText="<i class='fas fa-angle-left'></i>"
+                      nextText="<i class='fas fa-angle-right'></i>"
+                    >
+                    </pagination>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</ng-template>
+<ng-template #templateNested>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">E-Kasih</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <tabset>
+        <tab heading="Jenis Agihan" id="tab1">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Jenis Agihan</h3></div>
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jenis Pengagihan
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option value="alerts"> Jenis Agihan </option>
+                        <option value="Johor"> Agensi </option>
+                        <option value="Kedah"> Terus Ke Kir/Air </option>
+                        </select>
+                    </div>                   
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Negeri </option>
+                      <option value="Johor"> Johor </option>
+                      <option value="Kedah"> Kedah </option>
+                      <option value="Kelantan"> Kelantan </option>
+                      <option value="Melaka"> Melaka </option>
+                      <option value="Sembilan"> Negeri Sembilan </option>
+                      <option value="Pahang"> Pahang </option>
+                      <option value="Perak"> Perak </option>
+                      <option value="Perlis"> Perlis </option>
+                      <option value="Pinang"> Pulau Pinang </option>
+                      <option value="Sabah"> Sabah </option>
+                      <option value="Selangor"> Selangor </option>
+                      <option value="modals"> Terengganu </option>
+                      <option value="Wilayah"> Wilayah Persekutuan </option>
+                      </select>
+                    </div>
+                                     
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit">
+                      Seterusnya
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Maklumat Agihan">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Pilih Agensi</h3></div>
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Agensi
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Kategori Bantuan
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Kod Bantuan
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Nama Bantuan
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Nama Bantuan"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Bentuk Bantuan
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlTextarea1"
+                      >
+                        Syarat-syarat Permohonan
+                      </label>
+      
+                      <textarea
+                        class=" form-control"
+                        id="exampleFormControlTextarea3"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Penyelaras
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                      Agensi Pelaksana
+                      </label>
+      
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck1"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck1">
+                         Unit Perancang Ekonomi Negeri Johor
+                        </label>
+                      </div>
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck1"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck1">
+                         Unit Perancang Ekonomi Negeri Pahang
+                        </label>
+                      </div>
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck1"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck1">
+                         Unit Perancang Ekonomi Negeri Pulau Pinang
+                        </label>
+                      </div>
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck1"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck1">
+                         Unit Perancang Ekonomi Negeri Terengganu
+                        </label>
+                      </div>
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck1"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck1">
+                         Unit Perancang Ekonomi Negeri Kelantan
+                        </label>
+                      </div>
+    
+                      <div class=" custom-control custom-checkbox mb-3">
+                        <input
+                          class=" custom-control-input"
+                          id="customCheck2"
+                          type="checkbox"
+                        />
+    
+                        <label class=" custom-control-label" for="customCheck2">
+                          Unit Perancang Ekonomi (UPE)
+                        </label>
+                      </div>
+                    </div>
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit">
+                      Seterusnya
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Jumlah&Semak">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jumlah Agihan/ Agihan Baru(RM)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        No. Akaun
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value="Nama Bantuan"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Tarikh
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit" (click)="openModal3(template3)">
+                      Hantar
+                    </button>
+                    <button class=" btn btn-info" type="submit">
+                      Eksport
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</ng-template>
+<ng-template #template3>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">E-Kasih</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <tabset>
+        <tab heading="Maklumat Agihan">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Pilih KIR / Air</h3></div>
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Negeri </option>
+                      <option value="Johor"> Johor </option>
+                      <option value="Kedah"> Kedah </option>
+                      <option value="Kelantan"> Kelantan </option>
+                      <option value="Melaka"> Melaka </option>
+                      <option value="Sembilan"> Negeri Sembilan </option>
+                      <option value="Pahang"> Pahang </option>
+                      <option value="Perak"> Perak </option>
+                      <option value="Perlis"> Perlis </option>
+                      <option value="Pinang"> Pulau Pinang </option>
+                      <option value="Sabah"> Sabah </option>
+                      <option value="Selangor"> Selangor </option>
+                      <option value="modals"> Terengganu </option>
+                      <option value="Wilayah"> Wilayah Persekutuan </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Kategori Bantuan
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 300</option>
+                        <option> 500</option>
+                        <option> 800</option>
+                        <option> 1000</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Nama Agensi
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Jabatan Kebajikan Masyarakat Malaysia</option>
+                        <option> Jabatan Pendaftaran Negara</option>
+                        <option> Jabatan Perdana Menteri</option>
+                        <option> Jabatan Saliran AIr</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Nama Program
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Bantuan Am Bulanan Negeri</option>
+                        <option> 2</option>
+                        <option> 3</option>
+                        <option> 4</option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect5"
+                      >
+                        Bentuk Bantuan
+                      </label>
+      
+                       <div class=" custom-control custom-radio mb-3">
+                          <input
+                            class=" custom-control-input"
+                            id="customRadio5"
+                            name="custom-radio-1"
+                            type="radio"
+                          />
+      
+                          <label class=" custom-control-label" for="customRadio5">
+                            Barangan
+                          </label>
+                        </div>
+      
+                        <div class=" custom-control custom-radio mb-3">
+                          <input
+                            checked=""
+                            class=" custom-control-input"
+                            id="customRadio6"
+                            name="custom-radio-1"
+                            type="radio"
+                          />
+      
+                          <label class=" custom-control-label" for="customRadio6">
+                            Wang Ringgit
+                          </label>
+                        </div>
+                        <div class=" custom-control custom-radio mb-3">
+                          <input
+                            checked=""
+                            class=" custom-control-input"
+                            id="customRadio6"
+                            name="custom-radio-1"
+                            type="radio"
+                          />
+      
+                          <label class=" custom-control-label" for="customRadio6">
+                            Kedua-duanya
+                          </label>
+                        </div>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Tarikh Mula
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Tarikh Tamat
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       Frekuensi
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1</option>
+                        <option> 2</option>
+                        <option> 3</option>
+                        <option> 4</option>
+                      </select>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit">
+                      Seterusnya
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Jumlah&Semak">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+      
+                <div class=" card-body">
+                  <form>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jumlah Agihan/ Agihan Baru(RM)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        No. Akaun
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value="Nama Bantuan"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Tarikh
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div style="text-align: center;">
+                    <button class=" btn btn-primary" type="submit">
+                      Kembali
+                    </button>
+                    <button class=" btn btn-success" type="submit" (click)="openModal3(template3)">
+                      Hantar
+                    </button>
+                    <button class=" btn btn-info" type="submit">
+                      Eksport
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</ng-template>
+

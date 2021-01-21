@@ -1,0 +1,1327 @@
+<div class="main-content">
+  <!-- Header -->
+  <div class="header pt-5 pb-7" style="color:#f6f9fc;">
+    <!--chart-->
+    <div class=" container-fluid pb-7">
+      <div class=" header-body">
+        <div class=" row">
+          <div class=" col-xl-12">
+            <div class=" card">       
+              <div class=" card-body">
+               <div class="chart" id="chartdiv1"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class=" row">
+          <div class=" col-xl-6">
+            <div class=" card">       
+              <div class=" card-body">
+               <div class="chart" id="chartdiv"></div>
+                </div>
+              </div>
+          </div>
+          <div class=" col-xl-6">
+            <div class=" card">       
+              <div class=" card-body">
+               <div class="chart" id="chartdiv2"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--dropdown-->
+      <div class=" container-fluid mt--6">
+        <div class=" card">
+          <div class=" card-header">
+            <div class=" card-body">
+            <form>
+            <div class=" row">
+        
+          <div class=" col-md-2">
+            
+            <div class=" form-group">
+              <select class="form-control" (change)="getDaerah($event.target.value)" id="exampleFormControlSelect3">
+                <option value="alerts"> Negeri </option>
+                <option value="Johor"> Johor </option>
+                <option value="Kedah"> Kedah </option>
+                <option value="Kelantan"> Kelantan </option>
+                <option value="Melaka"> Melaka </option>
+                <option value="Sembilan"> Negeri Sembilan </option>
+                <option value="Pahang"> Pahang </option>
+                <option value="Perak"> Perak </option>
+                <option value="Perlis"> Perlis </option>
+                <option value="Pinang"> Pulau Pinang </option>
+                <option value="Sabah"> Sabah </option>
+                <option value="Selangor"> Selangor </option>
+                <option value="modals"> Terengganu </option>
+                <option value="Wilayah"> Wilayah Persekutuan </option>
+              </select>
+            </div>
+          </div>
+      
+        <div class=" col-md-2">
+            <div class=" form-group">
+            <form>
+          <select
+                  class=" form-control"
+                  data-toggle="select"
+                  id="selectr"
+                >
+                  <option value="0"> Daerah </option>
+                  <option *ngFor="let item of daerahData" value="item.daerah">{{item.daerah}}</option>
+                </select>
+            </form>
+            </div>
+          </div>
+      
+        <div class=" col-md-2">
+            <div class=" form-group">
+            <form>
+          <select
+                  class=" form-control"
+                  data-toggle="select"
+                  id="selectr"
+                >
+                  <option value="alerts"> Dun </option>
+                  <option value="Johor"> Jerteh </option>
+                  <option value="Kedah"> Kuala Besut </option>
+                  <option value="Kelantan"> Hulu Besut </option>
+                  <option value="Melaka"> Tembila </option>
+                  <option value="Sembilan">Bukit Keluang </option>
+                  <option value="Pahang"> Kota Putera </option>
+                  <option value="Perak"> Kampung Raja </option>
+                  <option value="Perlis"> Kubang Bemban </option>
+                </select>
+            </form>
+            </div>
+          </div>
+      
+          <div class=" col-md-2">
+            <div class=" form-group">
+            <form>
+          <select
+                  class=" form-control"
+                  data-toggle="select"
+                  id="selectr"
+                >
+                  <option value="alerts"> Etnik </option>
+                  <option value="Johor"> Melayu </option>
+                  <option value="Kedah"> Cina </option>
+                  <option value="Kelantan"> India </option>
+                  <option value="Melaka"> Orang Asli </option>
+                </select>
+            </form>
+            </div>
+          </div>
+      
+          <div class=" col-md-2">
+            <div class=" form-group">
+            <form>
+          <select
+                  class=" form-control"
+                  data-toggle="select"
+                  id="selectr"
+                >
+                  <option value="alerts"> Status Miskin </option>
+                  <option value="Johor"> B40 </option>
+                  <option value="Kedah"> Tidak Bekerja </option>
+                </select>
+            </form>
+            </div>
+          </div>
+      
+          <div class=" col-md-2">
+            <div class=" form-group">
+            <form>
+          <select
+                  class=" form-control"
+                  data-toggle="select"
+                  id="selectr"
+                >
+                  <option value="alerts"> Fasa </option>
+                  <option value="Johor"> 1 </option>
+                  <option value="Kedah"> 2 </option>
+                  <option value="Kedah"> 3 </option>
+                </select>
+            </form>
+            </div>
+          </div>
+      </div>
+      
+          <div class=" row">
+              <div class=" col-md-2">
+                <div class=" custom-control custom-checkbox mb-3">
+                  <input
+                  class=" custom-control-input"
+                  id="customCheck1"
+                  type="checkbox"
+                  />
+      
+                  <label class=" custom-control-label" for="customCheck1" style="color:black;">
+                  e-Kasih
+                  </label>
+                </div>
+              </div>
+              <div class=" col-md-6">
+                <div class=" custom-control custom-checkbox mb-3">
+                  <input
+                  class=" custom-control-input"
+                  id="customCheck2"
+                  type="checkbox"
+                  />
+      
+                  <label class=" custom-control-label" for="customCheck2" style="color:black;">
+                  Penerima Bantuan
+                  </label>
+                </div>
+              </div>
+            <div class=" col-md-4 text-right">
+              <button class=" btn btn-danger" type="button">Reset</button>
+              <button class=" btn btn-success" type="button">Search</button>
+            </div>  
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+    <!--gambar-->
+    <div class=" container-fluid mt--6">
+      <div class=" card">
+        <div class=" row">
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p1.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+              <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p2.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p3.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p4.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+              <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p5.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p6.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+        </div>
+        <div class=" row">
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p7.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+              <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p8.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p9.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p10.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p11.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+              <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+          </div>
+          <div class=" col-md-2">
+            <div style="background: url('assets/img/brand/p12.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+              <button type="button" class="btn btn-primary" (click)="openModal(template)" style="width:150px;">View</button>
+              <br>
+
+              
+        </div>
+        
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">E-Kasih</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <tabset #staticTabs>
+        <tab heading="Stage 1a" id="tab1">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Maklumat Peribadi</h3></div>
+      
+                <div class=" card-body">
+                  <form>                   
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         Nama Ketua Isi Rumah (KIR)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Nama Ketua Rumah"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         No. KP Baru/ No. KP Lama. No. Passport/ No. Surat Beranak KIR
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value="No. KP"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jumlah Pendapatan Tahunan(Isi Rumah)(RM)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Jumlah Pendapatan Tahunan"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Bil. Isi Rumah
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Bil. Isi Rumah"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlTextarea1"
+                      >
+                        Alamat Lengkap
+                      </label>
+      
+                      <textarea
+                        class=" form-control"
+                        id="exampleFormControlTextarea3"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Poskod
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Negeri
+                      </label>
+                      <select class="form-control" (change)="getDaerah($event)" id="exampleFormControlSelect3">
+                        <option value="1"> Negeri </option>
+                        <option value="2"> Johor </option>
+                        <option value="3"> Kedah </option>
+                        <option value="4"> Kelantan </option>
+                        <option value="5"> Melaka </option>
+                        <option value="6"> Negeri Sembilan </option>
+                        <option value="7"> Pahang </option>
+                        <option value="8"> Perak </option>
+                        <option value="9"> Perlis </option>
+                        <option value="10"> Pulau Pinang </option>
+                        <option value="11"> Sabah </option>
+                        <option value="12"> Selangor </option>
+                        <option value="13"> Terengganu </option>
+                        <option value="14"> Wilayah Persekutuan </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Daerah Pentadbiran
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option value="alerts"> Daerah </option>
+                        <option value="Johor"> Besut </option>
+                        <option value="Kedah"> Setiu </option>
+                        <option value="Kelantan"> Kuala Terengganu </option>
+                        <option value="Melaka"> Kuala Nerus </option>
+                        <option value="Sembilan">Kuala Berang </option>
+                        <option value="Pahang"> Marang </option>
+                        <option value="Perak"> Dungun </option>
+                        <option value="Perlis"> Kemaman </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Daerah Pentadbiran
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option value="alerts"> Dun </option>
+                        <option value="Johor"> Jerteh </option>
+                        <option value="Kedah"> Kuala Besut </option>
+                        <option value="Kelantan"> Hulu Besut </option>
+                        <option value="Melaka"> Tembila </option>
+                        <option value="Sembilan">Bukit Keluang </option>
+                        <option value="Pahang"> Kota Putera </option>
+                        <option value="Perak"> Kampung Raja </option>
+                        <option value="Perlis"> Kubang Bemban </option>
+                      </select>
+                    </div>
+                   
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Telefon Yang Boleh Dihubungi
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value=""
+                        /> 
+                    </div>                   
+                    <div style="text-align: center;">
+                      <button class=" btn btn-primary" type="submit">
+                        Kembali
+                      </button>
+                      <button class=" btn btn-danger" type="submit">
+                        Tolak
+                      </button>
+                      <button type="submit" class="btn btn-success" (click)="selectTab(staticTabs, 1)">
+                        Lulus
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Stage 1b">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Maklumat Kediaman</h3></div>
+      
+                <div class=" card-body">
+                  <form>
+      
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       1. Jenis Pemilikan
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Sendiri  </option>
+                        <option> Sewa </option>
+                        <option> Lain-lain </option>
+                      </select>
+                    </div>
+                    
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        2. Jika Menjawab B1(8, 9, 10), nyatakan bayaran sewa sebulan (RM)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Bayaran Sewa Sebulan"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       3. Jenis Tempat Kediaman
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Pedalaman </option>
+                        <option> Kampung </option>
+                        <option> Teres </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       4. Keadaan Tempat Kediaman(Secara Pemerhatian)
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3 </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       5. Jenis bahan binaan tempat kediaman untuk dinding luar (Secara Pemerhatian)
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Kayu </option>
+                        <option> Simin </option>
+                        <option> Lain-lan </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        6. Bilangan Bilik Tidur
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Bilangan Bilik Tidur"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       7. Jenis Tandas Yang Digunakan
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Cangkung </option>
+                        <option> Duduk </option>
+                        <option> Lain-lan </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       8. Adakah kemudahan berikut terdapat di kediaman anda?
+                      </label>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       a) Bekalan Elektrik
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Ya </option>
+                        <option> Tidak </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       b) Bekalan Air Yang Dirawat
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Ya </option>
+                        <option> Tidak </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        9. Jika Tiada Bekalan Elektrik, nyatakan sumber utama kuasa
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Sumber Utama Kuasa"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       10. Nyatakan sumber utama air untuk keperluan berikut
+                      </label>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       a) Minum
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Ya </option>
+                        <option> Tidak </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       b) Membasuh
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Ya </option>
+                        <option> Tidak </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlSelect3"
+                      >
+                       c) Mandi
+                      </label>
+      
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option>-----</option>
+                        <option> Ya </option>
+                        <option> Tidak </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlTextarea1"
+                      >
+                        Catatan
+                      </label>
+      
+                      <textarea
+                        class=" form-control"
+                        id="exampleFormControlTextarea3"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                      <button type="submit" class="btn btn-primary" (click)="selectTab(staticTabs, 0)">
+                        Kembali
+                      </button>
+                      <button class=" btn btn-danger" type="submit">
+                        Tolak
+                      </button>
+                      <button type="submit" class="btn btn-success" (click)="selectTab(staticTabs, 2)">
+                        Lulus
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Stage 2">
+          <div class=" card">
+            <div class=" card-header"><h3 class=" mb-0">Penetapan Verifikasi Lapangan</h3></div>
+            <span class="p-3" style="text-align: center;">Pilihan Pegawai</span>
+            <div class=" row">
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p1.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Ali<br/>Pegawai J40</button>
+              </div>
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p2.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Abu<br/>Pegawai J42</button>
+              </div>
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p3.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Am<br/>Pegawai J44</button>
+              </div>
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p4.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Amar<br/>Pegawai J48</button>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p7.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Ahmad<br/>Pegawai J40</button>
+              </div>
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p8.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Hariz<br/>Pegawai J44</button>
+              </div>
+              <div class=" col-md-3">
+                <div style="background: url('assets/img/brand/p9.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Afif<br/>Pegawai J48</button>
+              </div>
+              <div class=" col-md-3">
+
+                   <div style="background: url('assets/img/brand/p10.png');width: 150px;height:150px;background-size: cover;background-position: center;"></div>
+                    <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)" style="width:150px;">Afiq<br/>Pegawai J46</button>
+              </div>
+            </div>
+            <div class=" form-group">
+              <label
+                class=" form-control-label"
+                for="exampleFormControlTextarea1"
+              >
+                Catatan
+              </label>
+
+              <textarea
+                class=" form-control"
+                id="exampleFormControlTextarea3"
+                rows="3"
+              ></textarea>
+            </div>
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" (click)="selectTab(staticTabs, 1)">
+                Kembali
+              </button>
+              <button class=" btn btn-danger" type="submit">
+                Tolak
+              </button>
+              <button type="submit" class="btn btn-success" (click)="selectTab(staticTabs, 3)">
+                Lulus
+              </button>
+            </div>
+          </div>
+          
+        </tab>
+        <tab heading="Stage 3">
+          <div class=" col-lg-12">
+            <div class=" card-wrapper">   
+              <div class=" card">
+                <div class=" card-header"><h3 class=" mb-0">Pengesahan Maklumat Bantuan</h3></div>
+      
+                <div class=" card-body">
+                  <form>                   
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         Agensi
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="text"
+                          value="Agensi"
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Program
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                      <option value="alerts"> Bantuan AM Bulan Negeri </option>
+                      <option value="Johor"> ----- </option>
+                      </select>
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         Tarikh Mula
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         Tarikh Tamat
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                         Bulan/ Tahun (terakhir diterima)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="date"
+                          value=""
+                        /> 
+                    </div>
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Kekerapan
+                      </label>
+                      <select class=" form-control" id="exampleFormControlSelect3">
+                        <option value="alerts"> Bulanan </option>
+                        <option value="Johor"> Tahunan </option>
+                      </select>
+                    </div>
+                   
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="example-text-input"
+                      >
+                        Jumlah(RM)
+                      </label>
+      
+                        <input
+                          class=" form-control"
+                          id="example-text-input"
+                          type="number"
+                          value=""
+                        /> 
+                    </div> 
+                    <div class=" form-group">
+                      <label
+                        class=" form-control-label"
+                        for="exampleFormControlTextarea1"
+                      >
+                        Catatan
+                      </label>
+        
+                      <textarea
+                        class=" form-control"
+                        id="exampleFormControlTextarea3"
+                        rows="3"
+                      ></textarea>
+                    </div>                  
+                    <div style="text-align: center;">
+                      <button type="submit" class="btn btn-primary" (click)="selectTab(staticTabs, 2)">
+                        Kembali
+                      </button>
+                      <button class=" btn btn-danger" type="submit">
+                        Tolak
+                      </button>
+                      <button type="submit" class="btn btn-success" >
+                        Hantar Kepada Penyelia
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateNested>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Second modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    
+      <div class=" header-body">
+        <div class=" row align-items-center py-4">
+          <div class=" col-lg-6">
+            <h6 class=" fullcalendar-title h2 text-white d-inline-block mb-0">
+              Full calendar
+            </h6>
+  
+            <nav
+              aria-label="breadcrumb"
+              class=" d-none d-lg-inline-block ml-lg-4"
+            >
+              <ol class=" breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class=" breadcrumb-item">
+                  <a href="javascript:void(0)"> <i class=" fas fa-home"> </i> </a>
+                </li>
+  
+                <li class=" breadcrumb-item">
+                  <a href="javascript:void(0)"> Dashboard </a>
+                </li>
+  
+                <li aria-current="page" class=" breadcrumb-item active">
+                  Calendar
+                </li>
+              </ol>
+            </nav>
+          </div>
+  
+          <div class=" col-lg-6 mt-3 mt-lg-0 text-lg-right">
+            <a
+              class=" fullcalendar-btn-prev btn btn-sm btn-neutral"
+              href="javascript:void(0)"
+              (click)="calendar.next()"
+            >
+              <i class=" fas fa-angle-left"> </i>
+            </a>
+  
+            <a
+              class=" fullcalendar-btn-next btn btn-sm btn-neutral"
+              href="javascript:void(0)"
+              (click)="calendar.prev()"
+            >
+              <i class=" fas fa-angle-right"> </i>
+            </a>
+  
+            <a
+              class=" btn btn-sm btn-neutral"
+              data-calendar-view="month"
+              href="javascript:void(0)"
+              (click)="changeView('dayGridMonth')"
+            >
+              Month
+            </a>
+  
+            <a
+              class=" btn btn-sm btn-neutral"
+              data-calendar-view="basicWeek"
+              href="javascript:void(0)"
+              (click)="changeView('dayGridWeek')"
+            >
+              Week
+            </a>
+  
+            <a
+              class=" btn btn-sm btn-neutral"
+              data-calendar-view="basicDay"
+              href="javascript:void(0)"
+              (click)="changeView('dayGridDay')"
+            >
+              Day
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class=" row">
+        <div class=" col">
+          <div class=" card card-calendar">
+            <div class=" card-header"><h5 class=" h3 mb-0">Calendars</h5></div>
+    
+            <div class=" card-body p-0">
+              <div class=" calendar" data-toggle="calendar" id="calendar"></div>
+            </div>
+          </div>
+    
+          <div
+            aria-hidden="true"
+            aria-labelledby="new-event-label"
+            class=" modal fade"
+            id="new-event"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class=" modal-dialog modal-dialog-centered modal-secondary"
+              role="document"
+            >
+              <ng-template #modalAdd>
+                <div class=" modal-body">
+                  <form class=" new-event--form">
+                    <div class=" form-group">
+                      <label class=" form-control-label"> Event title </label>
+    
+                      <input
+                        class=" form-control form-control-alternative new-event--title"
+                        id="new-event--title"
+                        placeholder="Event Title"
+                        type="text"
+                        (change)="getNewEventTitle($event)"
+                      />
+                    </div>
+    
+                    <div class=" form-group mb-0">
+                      <label class=" form-control-label d-block mb-3">
+                        Status color
+                      </label>
+    
+                      <div
+                        class=" btn-group btn-group-toggle btn-group-colors event-tag"
+                        data-toggle="buttons"
+                      >
+                        <label
+                          class=" btn bg-info"
+                          [ngClass]="{ active: radios === 'bg-info' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            checked="checked"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-info"
+                            (click)="radios = 'bg-info'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-warning"
+                          [ngClass]="{ active: radios === 'bg-warning' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-warning"
+                            (click)="radios = 'bg-warning'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-danger"
+                          [ngClass]="{ active: radios === 'bg-danger' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-danger"
+                            (click)="radios = 'bg-danger'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-success"
+                          [ngClass]="{ active: radios === 'bg-success' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-success"
+                            (click)="radios = 'bg-success'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-default"
+                          [ngClass]="{ active: radios === 'bg-default' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-default"
+                            (click)="radios = 'bg-default'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-primary"
+                          [ngClass]="{ active: radios === 'bg-primary' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-primary"
+                            (click)="radios = 'bg-primary'"
+                          />
+                        </label>
+                      </div>
+                    </div>
+    
+                    <input class=" new-event--start" type="hidden" />
+    
+                    <input class=" new-event--end" type="hidden" />
+                  </form>
+                </div>
+    
+                <div class=" modal-footer">
+                  <button
+                    class=" btn btn-primary new-event--add"
+                    type="submit"
+                    (click)="addNewEvent()"
+                  >
+                    Add event
+                  </button>
+    
+                  <button
+                    (click)="addModal.hide()"
+                    class=" btn btn-link ml-auto"
+                    data-dismiss="modal"
+                    type="button"
+                  >
+                    Close
+                  </button>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+    
+          <div
+            aria-hidden="true"
+            aria-labelledby="edit-event-label"
+            class=" modal fade"
+            id="edit-event"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class=" modal-dialog modal-dialog-centered modal-secondary"
+              role="document"
+            >
+              <ng-template #modalEdit>
+                <div class=" modal-body">
+                  <form class=" edit-event--form">
+                    <div class=" form-group">
+                      <label class=" form-control-label"> Event title </label>
+    
+                      <input
+                        class=" form-control form-control-alternative edit-event--title"
+                        placeholder="Event Title"
+                        type="text"
+                        value="{{ eventTitle }}"
+                        (change)="getNewEventTitle($event)"
+                      />
+                    </div>
+    
+                    <div class=" form-group">
+                      <label class=" form-control-label d-block mb-3">
+                        Status color
+                      </label>
+    
+                      <div
+                        class=" btn-group btn-group-toggle btn-group-colors event-tag mb-0"
+                        data-toggle="buttons"
+                      >
+                        <label
+                          class=" btn bg-info"
+                          [ngClass]="{ active: radios === 'bg-info' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            checked="checked"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-info"
+                            (click)="radios = 'bg-info'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-warning"
+                          [ngClass]="{ active: radios === 'bg-warning' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-warning"
+                            (click)="radios = 'bg-warning'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-danger"
+                          [ngClass]="{ active: radios === 'bg-danger' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-danger"
+                            (click)="radios = 'bg-danger'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-success"
+                          [ngClass]="{ active: radios === 'bg-success' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-success"
+                            (click)="radios = 'bg-success'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-default"
+                          [ngClass]="{ active: radios === 'bg-default' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-default"
+                            (click)="radios = 'bg-default'"
+                          />
+                        </label>
+    
+                        <label
+                          class=" btn bg-primary"
+                          [ngClass]="{ active: radios === 'bg-primary' }"
+                        >
+                          <input
+                            autocomplete="off"
+                            name="event-tag"
+                            type="radio"
+                            value="bg-primary"
+                            (click)="radios = 'bg-primary'"
+                          />
+                        </label>
+                      </div>
+                    </div>
+    
+                    <div class=" form-group">
+                      <label class=" form-control-label"> Description </label>
+    
+                      <textarea
+                        class=" form-control form-control-alternative edit-event--description textarea-autosize"
+                        placeholder="Event Desctiption"
+                        value="{{ eventDescription }}"
+                        (change)="getNewEventDescription($event)"
+                      ></textarea>
+    
+                      <i class=" form-group--bar"> </i>
+                    </div>
+    
+                    <input class=" edit-event--id" type="hidden" />
+                  </form>
+                </div>
+    
+                <div class=" modal-footer">
+                  <button
+                    class=" btn btn-primary"
+                    data-calendar="update"
+                    (click)="updateEvent()"
+                  >
+                    Update
+                  </button>
+    
+                  <button
+                    class=" btn btn-danger"
+                    data-calendar="delete"
+                    (click)="deleteEventSweetAlert()"
+                  >
+                    Delete
+                  </button>
+    
+                  <button
+                    class=" btn btn-link ml-auto"
+                    data-dismiss="modal"
+                    (click)="editModal.hide()"
+                  >
+                    Close
+                  </button>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    This is nested modal.<br />
+    <button *ngIf="modalRef" type="button" class="btn btn-danger" (click)="closeFirstModal()">Close first modal</button>
+    <button type="button" class="btn btn-danger" (click)="closeModal(2)">Close self</button>
+    <button type="button" class="btn btn-danger" (click)="closeModal()">Close all modal</button>
+  </div>
+</ng-template>
